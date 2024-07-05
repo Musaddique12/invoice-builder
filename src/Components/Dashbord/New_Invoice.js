@@ -63,7 +63,8 @@ const New_Invoice = () => {
                     <input onChange={(e) => { setPrice(e.target.value) }} value={price} type='number' placeholder='Price' required></input>
                     <input onChange={(e) => { setQuantity(e.target.value) }} value={quantity} type='number' placeholder='quantity' required></input>
                 </div>
-                <button onClick={addProduct} className='add-btn' type='button'>Add Product</button>
+                {to && phone && address && product_name && price && quantity &&
+                <button onClick={addProduct} className='add-btn' type='submit'>Add Product</button>}
 
             </form>
 
