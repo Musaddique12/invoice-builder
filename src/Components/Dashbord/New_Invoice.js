@@ -53,15 +53,15 @@ const New_Invoice = () => {
            </div>
             <form className='new-invoice-form'>
                 <div className='first-row'>
-                    <input onChange={(e) => { setTo(e.target.value) }} value={to} placeholder='To'></input>
-                    <input onChange={(e) => { setPhone(e.target.value) }} value={phone} placeholder='Phone'></input>
-                    <input onChange={(e) => { setAddress(e.target.value) }} value={address} placeholder='Address'></input>
+                    <input onChange={(e) => { setTo(e.target.value) }} value={to} placeholder='To' required></input>
+                    <input onChange={(e) => { setPhone(e.target.value) }} value={phone} placeholder='Phone' required></input>
+                    <input onChange={(e) => { setAddress(e.target.value) }} value={address} placeholder='Address' required></input>
                 </div>
 
                 <div className='second-row'>
-                    <input onChange={(e) => { setProduct_name(e.target.value) }} value={product_name} placeholder='Product Name'></input>
-                    <input onChange={(e) => { setPrice(e.target.value) }} value={price} type='number' placeholder='Price'></input>
-                    <input onChange={(e) => { setQuantity(e.target.value) }} value={quantity} type='number' placeholder='quantity'></input>
+                    <input onChange={(e) => { setProduct_name(e.target.value) }} value={product_name} placeholder='Product Name' required></input>
+                    <input onChange={(e) => { setPrice(e.target.value) }} value={price} type='number' placeholder='Price' required></input>
+                    <input onChange={(e) => { setQuantity(e.target.value) }} value={quantity} type='number' placeholder='quantity' required></input>
                 </div>
                 <button onClick={addProduct} className='add-btn' type='button'>Add Product</button>
 
