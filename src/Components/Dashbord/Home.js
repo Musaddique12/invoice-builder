@@ -134,8 +134,8 @@ const Home = () => {
         </div>
 
         <div className='home-box box-2'>
-          <h1 className='box-header'>rs {invoices.length}</h1>
-          <p className='box-title'>Invoice</p>
+          <h1 className='box-header'> {invoices.length}</h1>
+          <p className='box-title'>Total Invoice</p>
         </div>
 
         <div className='home-box box-3'>
