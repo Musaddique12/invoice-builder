@@ -11,9 +11,11 @@ const Home = () => {
   const [invoices, setInvoices] = useState([])
   const chartRef = useRef(null)
 
+
   // Function to fetch data from Firestore
-  const getData = async () => {
-    const q = query(collection(firestore_database, 'invoice'), where('uid', '==', localStorage.getItem('uid')))
+  const getData = async (type) => {
+
+    const q = query(collection(firestore_database, type), where('uid', '==', localStorage.getItem('uid')))
     const querySnapshot = await getDocs(q);
 
     // Map through the fetched documents and set the invoices state
@@ -115,7 +117,18 @@ const Home = () => {
 
   // Fetch data when the component mounts
   useEffect(() => {
-    getData()
+    var type;
+
+    {
+      localStorage.getItem('invoice_type') === 'buy'
+      ?
+      type = 'buy_prodect'
+      :
+      type = 'invoice'
+    }
+
+
+    getData(type)
   }, [])
 
   // Recalculate totals and update the chart when invoices state changes
@@ -157,11 +170,11 @@ const Home = () => {
             <p>Total</p>
           </div>
 
-         { invoices.slice(0,6).map(data=>(
+          {invoices.slice(0, 6).map(data => (
             <div>
-               <p>{data.to}</p>
-            <p>{new Date(data.date.seconds * 1000).toLocaleDateString()}</p>
-            <p>{data.total}</p>
+              <p>{data.to}</p>
+              <p>{new Date(data.date.seconds * 1000).toLocaleDateString()}</p>
+              <p>{data.total}</p>
             </div>
           ))}
         </div>

@@ -1,0 +1,117 @@
+/* src/LandingPage.css */
+
+#body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #landing-page {
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  #landing-page h1 {
+    margin: 26.800px;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    animation: slideIn 1s ease-in-out;
+    font-family: 'Arial', sans-serif;
+  }
+
+  #landing-page p{
+    font-family: 'Arial', sans-serif;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  #subtitle {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    animation: slideIn 1s ease-in-out;
+  }
+  
+  #options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeInOptions 1.8s ease-in-out;
+  }
+  
+  @keyframes fadeInOptions {
+    from {
+      opacity: 0;
+      transform: translateY(70px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  #option {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #option:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+  
+  #option span {
+    font-family: 'Arial', sans-serif;
+  }
+  
+
+
+
+
+  @media (max-width: 480px) {
+    #landing-page h1 {
+      font-size: 1.5em;
+    }
+  
+    #subtitle {
+      font-size: 0.9em;
+    }
+  
+    #option {
+      padding: 12px 24px;
+    }
+  
+    #option p {
+      font-size: 0.7em;
+    }
+  }

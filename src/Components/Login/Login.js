@@ -23,7 +23,7 @@ const navigate = useNavigate()
       localStorage.setItem('email',user.email)
       localStorage.setItem('uid',user.uid)
 
-      navigate('/dashboard')
+      navigate('/choice')
       setLoading(false)
     })
     .catch(err=>{

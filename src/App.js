@@ -8,6 +8,9 @@ import Invoices from './Components/Dashbord/Invoices';
 import New_Invoice from './Components/Dashbord/New_Invoice';
 import Setting from './Components/Dashbord/Setting';
 import Invoice_Detail from './Components/Dashbord/Invoice_Detail';
+import AddBuying from './Components/Dashbord/AddBuying.';
+import ShowBuy from './Components/Dashbord/ShowBuy';
+import LandingPage from './Components/Dashbord/LandingPage';
 
 function App() {
 
@@ -15,12 +18,18 @@ function App() {
     {path:'/',Component:Login},
     {path:'/login',Component:Login},
     {path:'/register',Component:Register},
+    {path:'/choice',Component:LandingPage},
+
     {path:'/dashboard',Component:Dashboard,children:[
       {path:'',Component:Home},
       {path:'home',Component:Home},
       {path:'invoices',Component:Invoices},
       {path:'new-invoice',Component:New_Invoice},
       {path:'setting',Component:Setting},
+      {path:'add',Component:AddBuying},
+
+      {path:'show',Component:ShowBuy},
+
       {path:'invoice-detail',Component:Invoice_Detail}
     ]}
   
