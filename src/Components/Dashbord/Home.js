@@ -9,6 +9,7 @@ const Home = () => {
   const [totalInvoice, setTotalInvoice] = useState(56789)
   const [totalMonthCollection, setTotalMonthCollection] = useState(0)
   const [invoices, setInvoices] = useState([])
+  const [id,setId]=useState('')
   const chartRef = useRef(null)
 
 
@@ -69,7 +70,9 @@ const Home = () => {
       // Check if the invoice date is in the current year
       if (date.getFullYear() === new Date().getFullYear()) {
         const month = date.toLocaleString('default', { month: 'short' });
-        chartData[month] += d.total;
+        console.log(month)
+        chartData[month] =chartData[month]+ d.total;
+        console.log(chartData[month])
       }
     });
 
@@ -79,8 +82,12 @@ const Home = () => {
   };
 
   // Function to create a bar chart with the provided chartData
+
   const createChart = (chartData) => {
+    // const ctx = document.getElementById(id);
     const ctx = document.getElementById('myChart');
+
+
 
     // Destroy the previous chart instance if it exists
     if (chartRef.current) {
@@ -159,7 +166,7 @@ const Home = () => {
 
       <div className='home-second-row'>
         <div className='chart-box'>
-          <canvas id="myChart"></canvas>
+          <canvas id="myChart" ></canvas>
         </div>
 
         <div className='recent-invoice-list'>

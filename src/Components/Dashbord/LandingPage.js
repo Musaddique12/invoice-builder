@@ -1,7 +1,7 @@
 // src/Components/Dashbord/LandingPage.js
 import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faReceipt } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faReceipt, faClipboard } from '@fortawesome/free-solid-svg-icons';
 import './LandingPage.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -20,12 +20,18 @@ const LandingPage = () => {
       <div id="options">
         <div id="option" onClick={() => navigate('/dashboard',{state:'buy'},localStorage.setItem('invoice_type','buy'))}>
           <FontAwesomeIcon icon={faShoppingCart} size="2x" />
-          <span>Buy Product</span>
+          <span> Inventory Data </span>
         </div>
         <div id="option" onClick={() => navigate('/dashboard',{state:'sell'},localStorage.setItem('invoice_type','sell'))}>
           <FontAwesomeIcon icon={faReceipt} size="2x" />
-          <span>Sell Product</span>
+          <span>Sell Product data</span>
         </div>
+
+        <div id="option" onClick={() => navigate('/progress')}>
+        <FontAwesomeIcon icon={faClipboard} size='2x' />
+        <span> Data Summary </span>
+        </div>
+
       </div>
     </div>
    </div>

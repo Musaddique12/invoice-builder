@@ -11,6 +11,7 @@ import Invoice_Detail from './Components/Dashbord/Invoice_Detail';
 import AddBuying from './Components/Dashbord/AddBuying.';
 import ShowBuy from './Components/Dashbord/ShowBuy';
 import LandingPage from './Components/Dashbord/LandingPage';
+import Progress from './Components/Dashbord/Progress';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
     {path:'/register',Component:Register},
     {path:'/choice',Component:LandingPage},
 
+    {path:'/progress',Component:Progress},
     {path:'/dashboard',Component:Dashboard,children:[
       {path:'',Component:Home},
       {path:'home',Component:Home},
